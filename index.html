@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Moods Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Movie Moods Dashboard</h1>
+    </header>
+
+
+
+    <main class="container">
+        <section id="top-movies-section">
+            <h2>Top Movies by Popularity</h2>
+            <p>Use the filters below to customize the chart:</p>
+            <div id="filters">
+                <div class="filter-container">
+                    <label for="year-dropdown">Year:</label>
+                    <select id="year-dropdown">
+                        <option value="all">All</option>
+                    </select>
+                </div>
+                <div class="filter-container">
+                    <label for="num-movies-dropdown">Number of Movies:</label>
+                    <select id="num-movies-dropdown">
+                        <option value="5">Top 5</option>
+                        <option value="10">Top 10</option>
+                        <option value="15">Top 15</option>
+                        <option value="20">Top 20</option>
+                    </select>
+                </div>
+                <div class="filter-container">
+                    <label for="mood-dropdown">Mood:</label>
+                    <select id="mood-dropdown">
+                        <option value="all">All</option>
+                    </select>
+                </div>
+                <div class="filter-container">
+                    <label for="genre-dropdown">Primary Genre:</label>
+                    <select id="genre-dropdown">
+                        <option value="all">All</option>
+                    </select>
+                </div>
+            </div>
+            <div id="top-movies-bar-chart"></div>
+        </section>
+
+        <section id="visualizations">
+            <h2>Visualizations</h2>
+
+            <section id="vote-average-section">
+                <div id="vote-average-distribution"></div>
+                <p>This chart showcases the distribution of vote averages across different genres. It helps in identifying which genres tend to have higher or lower average votes.</p>
+            </section>
+            
+            <section id="popularity-section">
+                <div id="popularity-distribution"></div>
+                <p>This chart displays the popularity score of movies across different genres, providing an understanding of which genres are more popular among audiences.</p>
+            </section>
+            
+            <section id="vote-count-section">
+                <div id="vote-count-distribution"></div>
+                <p>This visualization shows the number of votes garnered by movies from various genres, indicating which genres have movies that engage more viewers to vote.</p>
+            </section>
+            
+            <section id="genre-mood-section">
+                <div id="genre-mood-distribution"></div>
+                <p>The chart demonstrates the distribution of moods in movies for each genre. It offers insights into the predominant moods associated with movies of different genres.</p>
+            </section>
+            
+            <section id="yearly-mood-section">
+                <div id="yearly-mood-trend"></div>
+                <p>This line graph depicts the yearly trend of moods in movies, highlighting shifts in moods over the years.</p>
+            </section>
+            
+            <section id="top-genre-for-moods-section">
+                <div id="top-genre-for-moods"></div>
+                <p>With this bar chart, you can observe which genre is most popular for each mood, shedding light on genre preferences for different moods.</p>
+            </section>
+            
+            <section id="top-primary-genres-section">
+                <div id="top-primary-genres"></div>
+                <p>This chart ranks the primary genres based on the number of movies. It's useful for understanding which genres are more prevalent in the dataset.</p>
+            </section>
+        </section>
+    </main>
+    
+    <section id="wordcloud-section" class="container">
+        <h2>Movie Descriptions Word Cloud by Decade</h2>
+        <div id="wordcloud-buttons">
+            <button data-decade="1960s">1960s</button>
+            <button data-decade="1970s">1970s</button>
+            <button data-decade="1980s">1980s</button>
+            <button data-decade="1990s">1980s</button>
+            <button data-decade="2000s">1980s</button>
+            <button data-decade="2010s">1980s</button>
+            <button data-decade="2020s">1980s</button>
+            <button data-decade="all">All Years</button>
+        </div>
+        <p>Select a decade above to view the word cloud.</p>
+        <div id="wordcloud-display">
+            <img class="wordcloud-image" id="wordcloud-1960s" src="./1960_wordcloud.png" alt="Word cloud for 1960s" />
+          
+            <img class="wordcloud-image" id="wordcloud-1960s" src="./1960_wordcloud.png" alt="Word cloud for 1960s" />
+            <img class="wordcloud-image" id="wordcloud-1970s" src="./1970_wordcloud.png" alt="Word cloud for 1970s" />
+            <img class="wordcloud-image" id="wordcloud-1980s" src="./1980_wordcloud.png" alt="Word cloud for 1980s" />
+            <img class="wordcloud-image" id="wordcloud-1990s" src="./1990_wordcloud.png" alt="Word cloud for 1990s" />
+            <img class="wordcloud-image" id="wordcloud-2000s" src="./2000_wordcloud.png" alt="Word cloud for 2000s" />
+            <img class="wordcloud-image" id="wordcloud-2010s" src="./2010_wordcloud.png" alt="Word cloud for 2010s" />
+            <img class="wordcloud-image" id="wordcloud-2020s" src="./2020_wordcloud.png" alt="Word cloud for 2020s" />
+            <img class="wordcloud-image" id="wordcloud-all" src="./all_wordcloud.png" alt="Word cloud for all years" />
+        </div>
+    </section>
+    
+    
+    <section id="data-info" class="container">
+        <h3>About the Data</h3>
+        <p>The data showcased in this dashboard is sourced from TMDB with explicit permission for its use. The dataset consisted of all movies of all languages from 1960 to sept 2023. I started with a comprehensive dataset, underwent an extensive Exploratory Data Analysis (EDA), and after rigorous cleaning and refinement, narrowed it down to a more manageable size, focusing exclusively on English movies. The insights presented are derived from meticulous calculations and analysis, providing an in-depth understanding of movie moods and trends over the years.</p>
+    </section>
+   
+    <footer class="container">
+        Developed by Brian Boeck
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
